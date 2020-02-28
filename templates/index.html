@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+      <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
+        <script src="{{ url_for('static', filename='app.js') }}"></script>
+        <script src="{{ url_for('static', filename='skycons.js') }}"></script>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"> </script>
+    
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+
+
+        <title>Better Weather</title>
+    </head>
+    <body>
+        <div class="container">  
+        <h1>Better Weather</h1>
+        <form id="form">
+            <input id="city" autocomplete="off" autofocus placeholder="City" type="text" style= "width:80%">
+            <input type="submit" value="Check" class="btn btn-dark">
+            <select id="city_selected" ></select>
+            
+        </form>
+         
+        <br>
+
+        <div id="result"></div>
+
+        
+        <div class="location">
+            <h1 class="location-timezone" id="current_city"></h1>
+            <canvas id="icon" width="128" height="128"></canvas>
+        </div>
+        <div class="temperature">
+            <div class="degree-section">
+            <h2 class="temperature-degree"></h2>
+            <!-- <span>F</span> -->
+        </div>
+        <div class="temperature-description"></div>
+        </div>
+
+        <span id="button_graph">
+            <button data-type='temperature' class="btn btn-light" id="default_click">Temperature</button>
+            <button data-type='precipitation' class="btn btn-light">Precipitation</button>
+            <button data-type='wind' class="btn btn-light">Wind</button>
+        </span>
+
+
+    <canvas id="myChart">   </canvas> 
+</div>
+
+          
+    </body>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>  
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</html>
