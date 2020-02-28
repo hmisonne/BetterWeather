@@ -1,6 +1,6 @@
-# Final Project
+# Better Weather : Final Project CS50W
 
-Web Programming with Python and JavaScript
+CS50W: Web Programming with Python and JavaScript
 
 "Better Weather" is a weather query web application using python, flask, javascript, graph.js and jquery.
 
@@ -54,6 +54,6 @@ will be updated. As the API will only display a UNIX time (which can be translat
 a query to a TimeZone database will be initiated to apply the proper offset to the UTC time.
 The graph is only showing the data for every 3rd hour for better readability.
 
-
-
+Check out my youtube video to learn more about this project:
+https://www.youtube.com/watch?v=612GhSAXi4s&t=4s
  
