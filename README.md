@@ -7,6 +7,8 @@ CS50W: Web Programming with Python and JavaScript
 On this web app, users can query weather for a particular city and get in response: a weather icon, 
 temperature, weather summary and 3 graph showing hourly data: wind, precipitation probability and temperature.
 
+![BetterWeather Demo](demo/demo.gif)
+
 ## Install
 
 
