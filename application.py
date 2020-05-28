@@ -1,11 +1,6 @@
-import os
-
 from flask import Flask, jsonify, render_template, request, redirect, url_for, flash
-from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
 import requests
 import csv
 from datetime import datetime
@@ -15,16 +10,6 @@ app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
-
-
-# Configure session to use filesystem
-# app.config["SESSION_PERMANENT"] = False
-# app.config["SESSION_TYPE"] = "filesystem"
-# Session(app)
-
-# Set up database
-# engine = create_engine("sqlite:///data.db")
-# db = scoped_session(sessionmaker(bind=engine))
 
 
 
@@ -46,8 +31,6 @@ class Timezone(db.Model):
     def __repr__(self):
         return f"Timezone: {self.name}, {self.offset}"
 
-
-# WORDS = Geolocalisation.query.with_entities(Geolocalisation.city).filter(Geolocalisation.city.like(f'par%')).all() format not satisfactory
 
 # Initialize list with all major cities for city route
 WORDS = []
@@ -99,9 +82,7 @@ def search():
     # if city, country not exactly specified look for similar entries
     if city == None:
         city = Geolocalisation.query.filter(Geolocalisation.city.like(f'{city_name}%'),Geolocalisation.country.like(f'{city_country}%')).first()
-        
-        # city_name = Geolocalisation.query.with_entities(Geolocalisation.city).filter(Geolocalisation.city.like(f'{city_name}%')).first()
-        
+                
         # if nothing found, return error message
         if city == None:
             print("error")
