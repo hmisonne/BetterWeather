@@ -56,6 +56,22 @@ will be updated. As the API will only display a UNIX time (which can be translat
 a query to a TimeZone database will be initiated to apply the proper offset to the UTC time.
 The graph is only showing the data for every 3rd hour for better readability.
 
+### How I used JavaScript to improve the User Experience: 
+
+#### Suggested queries:
+
+When a user is looking for the weather of a particular city, a list of cities that starts with the same characters will automatically appear under the input field based on the user input and will update at each key stroke.
+
+To perform this action, I used jquery: 
+
+- At each key stroke event, a GET request will be generated to the `/city` endpoint with the input value as query parameter.
+- If a user types: "pari" on the input field, it will generate an API call `http://127.0.0.1:5000/city?q=pari` that will return a list of cities starting with "pari"
+```
+["Parintins, Brazil","Paris, France","Paris, United States","Paris, United States","Paris, United States","Paris, United States"]
+```
+- The data received by this API call will then be added to the DOM on a select menu.
+
+
 Check out my youtube video to learn more about this project:
 https://www.youtube.com/watch?v=612GhSAXi4s&t=4s
  
